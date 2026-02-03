@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Izvir</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+
+    <div class="split-container">
+        
+        <!-- Text Area (Fills remaining space) -->
+        <div class="text-section">
+            
+            <h1 class="title">Izvir</h1>
+            <p>Dobrodošli na moji (zelo prestižni) spletni strani. Na tej strani so zbrani linki do vseh mojih projektov in razne druge zadeve.</p>
+            <p>Moji projekti:</p>
+            <ul>
+                <li><a href="https://foto.izvir.eu">Moja foto galerija</a></li>
+                <li><a href="https://us.izvir.eu">Združene države amerike</a></li>
+            </ul> 
+            <p>Zasebni linki:</p>
+            <ul>
+                <li><a href="http://music.izvir.eu">Muzika</a>
+                {% if artist and title and suffix %}
+                    <span class="now-playing">
+                    {{ artist }} – {{ title }}
+                    <span class="suffix">({{ suffix }})</span>
+                    </span>
+                {% endif %}
+                </li>
+                <li><a href="http://192.168.1.70:81">Truenas Host</a></li>
+                <li><a href="http://192.168.1.69">Truenas NAS</a></li>
+                <li><a href="http://192.168.1.70:30020/login">Nginx</a></li>
+            </ul> 
+            <p>Druge platforme:</p>
+            <ul>
+                <li><a href="https://github.com/comalnik">Guthib</a></li>
+                <li><a href="https://steamcommunity.com/id/comalnik/">Para</a></li>
+                <li><a href="https://huggingface.co/Comalnik">Huggingface</a></li>
+                <li><a href="https://youtube.com/@koulguygaming">Jutub</a></li>
+                <li><a href="mailto:jst@catgirl.si">email</a> (Razn če pozabim domeno plačat)</li>
+            </ul> 
+            <p>Random uporabni linki:</p>
+            <ul>
+                <li><a href="https://moj.neoserv.si/login">Neoserv</a></li>
+                <li><a href="https://www.wolframalpha.com/">Wolfram Alpha</a></li>
+                <li><a href="https://fmhy.net/">FMHY</a></li>
+            </ul> 
+        </div>
+
+        <!-- Image Area (Pinned Right) -->
+        <div class="image-section">
+            <img src="{{ url_for('static', filename='img/' + image) }}" alt="Vertical Photo">
+        </div>
+
+    </div>
+
+</body>
+</html>
